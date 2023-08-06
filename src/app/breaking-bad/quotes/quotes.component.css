@@ -1,0 +1,23 @@
+.container {
+  margin-top: 25px;
+  border: 1px solid black;
+  height: auto;
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.card{
+  border:  1px solid black;
+  border-radius: 10px;
+  margin: 5px;
+  width: 90%;
+  text-align: center;
+}
+
+p {
+  padding: 5px;
+}
+

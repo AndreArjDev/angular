@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="top">
+      <div >
+        <h1 (click)="verLoja()">Lojinha</h1>
+      </div>
+      <div >
+        <h6 (click)="verCadastroProduto()">Cadastrar Produto</h6>
+      </div>
+      <div>
+      <app-carrinho-resumo (click)="verCarrinho()"></app-carrinho-resumo>
+    </div>
+  </div>
+  <div class="painel" *ngIf="mostrarLoja">
+    <div *ngFor="let produto of produtos">
+      <app-card-produto [produtoCard]= produto></app-card-produto>
+    </div>
+  </div>
+  <div class="painel" *ngIf="mostrarCarrinho">
+    <app-carrinho></app-carrinho>
+  </div>
+  <div class="painel" *ngIf="mostrarFormCadastroProduto">
+    <app-formulario-cadastro-produto></app-formulario-cadastro-produto>
+  </div>
+</div>
+

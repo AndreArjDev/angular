@@ -1,0 +1,9 @@
+
+<div class="container" *ngIf="quotes.length > 0">
+    <div class="card"*ngFor="let item of quotes">
+      <p>"{{item.quote}}"</p>
+      <p>{{item.author}}</p>
+    </div>
+</div>
+
+

@@ -1,0 +1,17 @@
+.toolbar{
+  height: 5vh;
+  background-color: #7159C1;
+  display: flex;
+}
+
+.toolbar span{
+  font-family: 'Roboto';
+  font-weight: 700;
+  padding: 12px;
+  color:#ffffff;
+}
+
+.toolbar a {
+  text-decoration: none;
+  color: #ffffff;
+}

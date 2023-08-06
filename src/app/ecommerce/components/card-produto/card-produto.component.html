@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="elementos">
+    <div class="imagem">
+      <img  src="{{produtoCard.imagem}}"  alt="imagem produto">
+    </div>
+    <div class="nome">
+      <p>{{produtoCard.nome}}</p>
+    </div>
+    <div class="preco">
+      <p>{{produtoCard.preco | currency}}</p>
+    </div>
+    <div class="btn">
+      <app-btn-add-carrinho (quantidadeProdutoEvent)="adicionarAoCarrinho($event)"></app-btn-add-carrinho>
+    </div>
+  </div>
+</div>

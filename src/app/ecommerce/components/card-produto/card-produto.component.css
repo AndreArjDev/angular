@@ -1,0 +1,53 @@
+.card {
+  border-radius: 4px;
+  background: #ffffff;
+  height: 442px;
+  width: cover;
+}
+
+.elementos {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-content: flex-start;
+
+}
+
+.imagem {
+  height: 260px;
+  width: 260px;
+  align-self: center;
+
+
+}
+
+.nome {
+  height: 42px;
+  width: 188px;
+  padding-left: 20px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: #333333;
+}
+
+.preco {
+
+  height: 42px;
+  width: 188px;
+  padding-left: 20px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.btn {
+  align-self: center;
+
+}
+

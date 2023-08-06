@@ -1,0 +1,38 @@
+.container{
+  height: 5vh;
+  display: grid;
+  grid-template-columns: 2fr;
+  font-family: 'Roboto';
+  justify-items: center;
+}
+
+.container h6 {
+  grid-column-start: 2;
+  font-size: 12px;
+}
+
+
+.paragrafos {
+  grid-column-start: 2;
+  height: 3vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: start;
+  margin: 0%;
+
+}
+
+.paragrafos span{
+  color: gray;
+}
+
+.paragrafos span {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0px;
+  padding: 12px;
+}
+
+
+

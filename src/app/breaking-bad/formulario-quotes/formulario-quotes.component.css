@@ -1,0 +1,51 @@
+form {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.form-group {
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.form-group label{
+  font-weight: bold;
+  font-size: .9em;
+  margin-bottom: .4em;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: .6em;
+  color: #777;
+  font-size: .8em;
+}
+
+.botao {
+  background-color:#0774f1 ;
+  color: white;
+  border: none;
+  padding: 0.6em 1em;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1em;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.botao:hover {
+  color: #0774f1;
+  border-color: #0774f1;
+  background-color: transparent;
+}
+
+.erroValidacao {
+  font-size: 10px;
+  color: #dc3545;
+  margin-top: 0.4em;
+  border-left: 3px solid #dc3545;
+  padding-left: 0.2em;
+}

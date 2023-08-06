@@ -1,0 +1,30 @@
+.btn-add{
+  display: flex;
+  flex-direction: row;
+  height: 42px;
+  width: 240px;
+  align-content: start;
+  background: #7159C1;
+  border-radius: 4px;
+}
+
+.quantidade {
+  width: 20%;
+  text-align: end;
+  background: #47377e;
+  color: white;
+  padding-right: 10px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border:none;
+
+}
+
+button {
+  left: 0px;
+  top: 0px;
+  border: none;
+  background: #7159C1;
+  color: white;
+  padding-left: 15px;
+}

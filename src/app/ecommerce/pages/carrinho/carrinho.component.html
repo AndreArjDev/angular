@@ -1,0 +1,8 @@
+<div *ngIf="temProdutosNoCarrinho; else carrinhoVazio">
+  <app-tabela-produtos [carrinho]="carrinho" (quantidadeProdutoEvent)="alterarQuantidadeProduto($event)"></app-tabela-produtos>
+</div>
+
+<ng-template #carrinhoVazio>
+  <span class="carrinho-vazio">Não há produtos no carrinho.</span>
+</ng-template>
+

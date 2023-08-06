@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th></th>
+    <th>PRODUTO</th>
+    <th>QTD</th>
+    <th>PREÇO</th>
+    <th></th>
+  </tr>
+  <tr class="row-produto"*ngFor="let produto of carrinho">
+    <td><img src={{produto.imagem}}/></td>
+    <td>{{produto.nome}}</td>
+    <td><input type="number" class="quantidade" value={{produto.quantidade}} (click)="alterarQuantidadeProduto(produto.id, $event)"/></td>
+    <td>{{produto.preco | currency}}</td>
+  </tr>
+  <tr>
+    <td class="total">Total</td>
+    <td class="preco">{{ total | currency }}</td>
+  </tr>
+</table>

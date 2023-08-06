@@ -1,0 +1,74 @@
+
+table {
+  background-color: #ffffff;
+  width: 50vw;
+  border-radius: 4px;
+}
+
+table tr {
+  display:grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+
+table th {
+  padding: 12px;
+  padding-top: 20px;
+  text-align: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  color: #999999;
+
+}
+
+table  td:nth-child(2){
+  text-align: left;
+}
+table  th:nth-child(2){
+  text-align: left;
+}
+
+table td {
+  padding: 12px;
+  text-align: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+}
+
+.row-produto{
+  line-height: 100px;
+  border-bottom: 1px solid #eeeeee ;
+}
+
+.quantidade {
+  width: 20%;
+  padding-right: 10px;
+  border-radius:4px;
+  border-color:#999999;
+}
+
+.total {
+  grid-column-start: 3;
+  color: #999999;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: right;
+}
+
+.preco {
+  font-family: 'Roboto';
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: -1.600000023841858px;
+  text-align: left;
+}
+
+img {
+  width: 50px;
+  align-items: center;
+}

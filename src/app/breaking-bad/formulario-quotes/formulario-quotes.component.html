@@ -1,0 +1,35 @@
+<p>formulario-quotes works!</p>
+
+<form (ngSubmit)="enviar()" [formGroup]="formQuotes" #forDir="ngForm">
+  <div class="form-group">
+    <label for="quote"> Quote</label>
+    <textarea type="text" placeholder="quote" formControlName="quote" required></textarea>
+  </div>
+  <div class="erroValidacao" *ngIf="isCampoInvalido('quote') && forDir.submitted">
+    <p>* Quote Obrigatório</p>
+  </div>
+
+  <div class="form-group">
+    <label for="autor">Autor</label>
+    <input type="text" placeholder="autor" formControlName="autor" required/>
+  </div>
+  <div class="erroValidacao" *ngIf="isCampoInvalido('autor') && forDir.submitted">
+    <p>* Autor Obrigatório</p>
+  </div>
+
+  <div class="form-group">
+    <label for="email"> E-mail</label>
+    <input type="email" placeholder="e-mail@e-mail.com" formControlName="email" required/>
+  </div>
+  <div class="erroValidacao" *ngIf="isCampoInvalido('email') && forDir.submitted">
+    <p>* Autor Obrigatório</p>
+  </div>
+
+  <div class="form-group">
+    <label for="imagem">Imagem</label>
+    <input type="file"/>
+  </div>
+
+  <button class="botao" type="submit">Enviar</button>
+
+</form>

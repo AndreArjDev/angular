@@ -1,0 +1,44 @@
+.container{
+  display: grid;
+  background-color: #191920;
+  grid-template-rows: 5vh 100vh;
+  padding: 30px;
+}
+
+.top{
+  display: grid;
+  grid-template-columns: 3.5fr repeat(2,1fr);
+  width: 50vw;
+  justify-self: center;
+  align-content: space-between;
+  color: aliceblue;
+
+}
+
+.top h1{
+  color: #FFFFFF;
+  font-family: 'Roboto';
+  font-size: 25px;
+}
+
+.top h6{
+  color: #FFFFFF;
+  font-family: 'Roboto';
+  font-size: 12px;
+}
+
+.painel {
+  margin-top: 20px;
+  justify-self: center;
+  height: 100vh;
+  width: 50vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 442px;
+  grid-column-gap:20px ;
+  grid-row-gap:20px;
+  justify-content: center;
+}
+
+
+
