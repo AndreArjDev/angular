@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { IdQuantidade, Produto } from '../model/produto';
+import { Produto } from '../model/produto';
 import { Totais } from '../model/totais';
 
 @Injectable({
@@ -42,9 +42,8 @@ export class AdicionarAoCarrinhoService {
 
   produtoNoCarrinho(produto: Produto): boolean {
     let carrinho = this.buscarCarrinho()
-    let prod = Produto.fromJson(carrinho.find(p => p.id === produto.id))
-    console.log(prod?true:false)
-    return prod?true:false;
+    let prod = carrinho.find((produtoCarrinho) => produtoCarrinho.id === produto.id);
+    return prod? true: false;
   }
 
   salvar(carrinho: Produto[]): void {
@@ -69,17 +68,19 @@ export class AdicionarAoCarrinhoService {
     return {totalItens, totalPreco}
   }
 
-  alterarQuantidadeProduto(idQuantidade: IdQuantidade) {
-    let carrinho = this.buscarCarrinho();
-    let produto = Produto.fromJson(carrinho.find(produto => produto.id === idQuantidade.id))
-    if(produto){
-      produto.alterarQuantidade(idQuantidade.quantidade);
-      console.log(produto);
-      let index = carrinho.indexOf(produto);
-      carrinho.splice(index,1, produto)
-    }
+  alterarQuantidadeProduto(idProduto: number, quantidade: number) {
+    const carrinho = this.buscarCarrinho();
+    const produto = Produto.fromJson(carrinho.find((produtoCarrinho) => produtoCarrinho.id === idProduto));
+    const posicao = carrinho.findIndex(produtoCarrinho => produtoCarrinho.id === idProduto);
+    produto.alterarQuantidade(quantidade);
+    carrinho.splice(posicao, 1, produto);
+    this.salvar(carrinho);
+  }
 
-
+  removerProduto(produto: Produto): void {
+    const carrinho = this.buscarCarrinho();
+    const posicao = carrinho.findIndex(p => p.id === produto.id)
+    carrinho.splice(posicao,1);
     this.salvar(carrinho);
   }
 

@@ -11,28 +11,13 @@ export class Produto {
    }
 
   alterarQuantidade(quantidade: number): void{
-    this.quantidade = quantidade;
+    console.log(quantidade)
+    quantidade===1?
+     this.quantidade! += quantidade :
+     this.quantidade = quantidade
   }
 
   static fromJson(json: any): Produto {
     return Object.assign(new Produto(), json);
   }
-}
-
-export interface ProdutoCard {
-  id: number;
-  nome: string;
-  preco: number;
-  imagem: string;
-}
-
-export class IdQuantidade  {
-  id: number;
-  quantidade: number;
-
-  constructor (id:number,quantidade:number) {
-    this.id = id;
-    this.quantidade = quantidade
-  }
-
 }

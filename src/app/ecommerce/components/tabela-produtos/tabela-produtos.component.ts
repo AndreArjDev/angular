@@ -1,5 +1,5 @@
 import { AdicionarAoCarrinhoService } from '../../service/adicionar-ao-carrinho.service';
-import { IdQuantidade, Produto } from './../../model/produto';
+import { Produto } from './../../model/produto';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 
@@ -13,7 +13,7 @@ export class TabelaProdutosComponent implements OnInit {
 
   @Input() carrinho!: Produto[]
   @Input() totalPreco!: number | string
-  @Output() quantidadeProdutoEvent = new EventEmitter();
+  @Output() quantidadeProdutoEvent = new EventEmitter<Produto>();
   total:number = 0;
   constructor( private addcarinhoService: AdicionarAoCarrinhoService) { }
 
@@ -29,10 +29,9 @@ export class TabelaProdutosComponent implements OnInit {
         alert("erro ao identificar o produto");
         return
     }
-    const idQuantidade = new IdQuantidade(idProduto, parseInt((event.target as HTMLInputElement).value));
-    this.quantidadeProdutoEvent.emit(idQuantidade);
+    const produto = Produto.fromJson({id:idProduto, quantidade: parseInt((event.target as HTMLInputElement).value)});
+    this.quantidadeProdutoEvent.emit(produto);
   }
-
 
   calcularPrecoTotalProduto(produto: Produto) {
     return (produto.preco || 0)  * (produto.quantidade || 0);

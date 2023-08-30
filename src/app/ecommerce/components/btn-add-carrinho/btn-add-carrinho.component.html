@@ -1,6 +1,6 @@
 <div class="btn-add">
 
-    <input class="quantidade" type="number" min="1" [(ngModel)]="quantidade"/>
+    <input class="quantidade" type="number" disabled [value]="quantidade"/>
 
 
   <button type="submit" (click)="adicionarAoCarrinho()">

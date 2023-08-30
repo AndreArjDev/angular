@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProdutoCard } from '../../model/produto';
+import { HttpClient } from '@angular/common/http';
+
+import { Produto } from '../../model/produto';
 
 
 @Component({
@@ -13,15 +15,18 @@ export class EcommerceComponent implements OnInit {
   mostrarCarrinho = false;
   mostrarFormCadastroProduto = false;
 
-  produtos: ProdutoCard[] = [
-    {'id': 1, 'nome':'sapato', 'preco': 123.49, 'imagem':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQce_prTCamgk_QvbSQPYY7Dtyke0cNY1hWg&usqp=CAU'},
-    {'id': 2, 'nome':'sapato', 'preco': 123.49, 'imagem':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQce_prTCamgk_QvbSQPYY7Dtyke0cNY1hWg&usqp=CAU'},
-    {'id': 3, 'nome':'sapato', 'preco': 123.49, 'imagem':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQce_prTCamgk_QvbSQPYY7Dtyke0cNY1hWg&usqp=CAU'},
-    {'id': 4, 'nome':'sapato', 'preco': 123.49, 'imagem':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQce_prTCamgk_QvbSQPYY7Dtyke0cNY1hWg&usqp=CAU'}
-]
-  constructor() { }
+  produtos!: Produto[];
+  url = 'http://localhost:3000';
+
+  constructor(private http: HttpClient ) { }
 
   ngOnInit(): void {
+    this.buscarProdutos()
+    .subscribe(resposta => this.produtos = resposta.map( r => Produto.fromJson({...r,id:r._id})));
+  }
+
+  buscarProdutos(){
+    return this.http.get<any[]>(`${this.url}/produtos`)
   }
 
   verLoja(){

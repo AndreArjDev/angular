@@ -1,4 +1,3 @@
-import { IdQuantidade } from './../../model/produto';
 import { Component, OnInit } from '@angular/core';
 import { AdicionarAoCarrinhoService } from '../../service/adicionar-ao-carrinho.service';
 import { Produto } from '../../model/produto';
@@ -24,8 +23,11 @@ export class CarrinhoComponent implements OnInit {
     return this.carrinho.length > 0;
   }
 
-  alterarQuantidadeProduto(idQuantidade: IdQuantidade): void {
-      this.addcarrinhoService.alterarQuantidadeProduto(idQuantidade);
+  alterarQuantidadeProduto(produto: Produto): void {
+      if(produto.quantidade===1){
+        this.addcarrinhoService.removerProduto(produto);
+      }
+      this.addcarrinhoService.alterarQuantidadeProduto(produto.id as number, produto.quantidade as number);
       this.addcarrinhoService.notificarProdutosAlterados();
   }
 }

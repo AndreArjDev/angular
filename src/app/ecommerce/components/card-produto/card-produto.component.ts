@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IdQuantidade, Produto, ProdutoCard } from '../../model/produto';
+import { Produto} from '../../model/produto';
 import { AdicionarAoCarrinhoService } from '../../service/adicionar-ao-carrinho.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { AdicionarAoCarrinhoService } from '../../service/adicionar-ao-carrinho.
 })
 export class CardProdutoComponent {
   @Input()
-  produtoCard!: ProdutoCard;
+  produtoCard!: Produto;
 
   constructor(private addcarrinhoService: AdicionarAoCarrinhoService) {
   }
@@ -22,9 +22,11 @@ export class CardProdutoComponent {
       this.addcarrinhoService.criar();
     }
 
-    this.addcarrinhoService.adicionar(produto)
-    this.addcarrinhoService.notificarProdutosAlterados();
+    this.addcarrinhoService.produtoNoCarrinho(produto)?
+      this.addcarrinhoService.alterarQuantidadeProduto(produto.id!, quantidade):
+      this.addcarrinhoService.adicionar(produto)
 
+    this.addcarrinhoService.notificarProdutosAlterados();
   }
 
 }
